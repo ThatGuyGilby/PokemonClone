@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa3bab79afe22ed4985f857a7f395f02, type: 3}
+  m_Name: Flying
+  m_EditorClassIdentifier: 
+  typeName: Flying
+  weaknesses:
+  - {fileID: 11400000, guid: f0b8dfb076a32494a8de58688164db8a, type: 2}
+  - {fileID: 11400000, guid: bbbf0602206650047803ac5ff1c9ebc7, type: 2}
+  - {fileID: 11400000, guid: 2d47c9d53ff8bbf4ab9b28db618d38a7, type: 2}
+  resistances:
+  - {fileID: 11400000, guid: 17b0c748e01445c458d5da405b02d674, type: 2}
+  - {fileID: 11400000, guid: eee4298152a82e943b061163b8bbe4cf, type: 2}
+  - {fileID: 11400000, guid: a5461b4e114fd3a47930f43b53787cd3, type: 2}
+  immunities:
+  - {fileID: 11400000, guid: b7480c6831fa8504ba7714df70dcbbb0, type: 2}

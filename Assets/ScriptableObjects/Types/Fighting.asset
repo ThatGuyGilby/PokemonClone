@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa3bab79afe22ed4985f857a7f395f02, type: 3}
+  m_Name: Fighting
+  m_EditorClassIdentifier: 
+  typeName: Fighting
+  weaknesses:
+  - {fileID: 11400000, guid: 7f7190ffa9a5cd9428eac9a9271b265d, type: 2}
+  - {fileID: 11400000, guid: cfcc4e4c4dd20044cbacc85ef85a6680, type: 2}
+  - {fileID: 11400000, guid: c6659e7cf7a85b5439ac37cb32f1032c, type: 2}
+  resistances:
+  - {fileID: 11400000, guid: a5461b4e114fd3a47930f43b53787cd3, type: 2}
+  - {fileID: 11400000, guid: 2d47c9d53ff8bbf4ab9b28db618d38a7, type: 2}
+  - {fileID: 11400000, guid: 2a100ee5c30dbe54ea1f9a523217eaa4, type: 2}
+  immunities: []

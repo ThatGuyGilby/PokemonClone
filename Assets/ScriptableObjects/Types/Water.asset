@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa3bab79afe22ed4985f857a7f395f02, type: 3}
+  m_Name: Water
+  m_EditorClassIdentifier: 
+  typeName: Water
+  weaknesses:
+  - {fileID: 11400000, guid: f0b8dfb076a32494a8de58688164db8a, type: 2}
+  - {fileID: 11400000, guid: 17b0c748e01445c458d5da405b02d674, type: 2}
+  resistances:
+  - {fileID: 11400000, guid: 68f604c69a6a4b3459b73ecc98381191, type: 2}
+  - {fileID: 11400000, guid: bbbf0602206650047803ac5ff1c9ebc7, type: 2}
+  - {fileID: 11400000, guid: c2ab0a9da56f33e4fafb65799058b6a2, type: 2}
+  - {fileID: 11400000}
+  immunities: []

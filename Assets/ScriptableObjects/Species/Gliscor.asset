@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7acda31e6747c4e44b3ab6eeae60ee4e, type: 3}
+  m_Name: Gliscor
+  m_EditorClassIdentifier: 
+  speciesName: Gliscor
+  types:
+  - {fileID: 11400000, guid: b7480c6831fa8504ba7714df70dcbbb0, type: 2}
+  - {fileID: 11400000, guid: 7f7190ffa9a5cd9428eac9a9271b265d, type: 2}
+  abilities:
+  - {fileID: 11400000, guid: 9af51f7da91040346bcc435a2e974f3a, type: 2}
+  - {fileID: 11400000, guid: 1b96e36b564034a40beb07879bcf71f7, type: 2}
+  hiddenAbility: {fileID: 11400000, guid: f3e1348acd251494aaaea8f69ed4b817, type: 2}
+  health: 75
+  attack: 95
+  defence: 125
+  specialAttack: 45
+  specialDefence: 75
+  speed: 95
+  moves:
+  - {fileID: 11400000, guid: 742eff52b3af7d146a51531dbb7b2e4f, type: 2}
