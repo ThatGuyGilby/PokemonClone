@@ -8,6 +8,18 @@ public class Stat
     [Range(0, 31)] public int geneticValue;
     [Range(0, 65)] public int investedValue;
 
+    public Stat(int _geneticValue = 0, int _invested_value = 0)
+    {
+        geneticValue = _geneticValue;
+        investedValue = _invested_value;
+    }
+
+    public Stat(Stat _stat)
+    {
+        geneticValue = _stat.geneticValue;
+        investedValue = _stat.investedValue;
+    }
+
     public int GetValue(int _base, int _level, int _minimum = 5)
     {
         int _value = 0;

@@ -123,6 +123,49 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &221920754
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 221920755}
+  - component: {fileID: 221920756}
+  m_Layer: 0
+  m_Name: BattleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &221920755
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221920754}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &221920756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221920754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15e4871cfa5312c42b035b59c8825901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,37 +344,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff205bbeb663774e9c3507d5a73fc73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pid: 0
-  level: 100
-  species: {fileID: 11400000, guid: cf86a73568b07f648b92ff8a8a3e55c0, type: 2}
-  item: 
-  ability: {fileID: 0}
-  health:
-    geneticValue: 31
-    investedValue: 63
-  attack:
-    geneticValue: 31
-    investedValue: 0
-  defence:
-    geneticValue: 31
-    investedValue: 63
-  specialAttack:
-    geneticValue: 31
-    investedValue: 0
-  specialDefence:
-    geneticValue: 31
-    investedValue: 1
-  speed:
-    geneticValue: 31
-    investedValue: 0
-  maxHealth: 0
-  currentHealth: 0
-  currentAttack: 0
-  currentDefence: 0
-  currentSpecialAttack: 0
-  currentSpecialDefence: 0
-  currentSpeed: 0
   target: {fileID: 2076035337}
+  data:
+    pid: 0
+    level: 100
+    species: {fileID: 11400000, guid: cf86a73568b07f648b92ff8a8a3e55c0, type: 2}
+    item: 
+    ability: {fileID: 0}
+    health:
+      geneticValue: 31
+      investedValue: 63
+    attack:
+      geneticValue: 31
+      investedValue: 0
+    defence:
+      geneticValue: 31
+      investedValue: 63
+    specialAttack:
+      geneticValue: 31
+      investedValue: 0
+    specialDefence:
+      geneticValue: 31
+      investedValue: 1
+    speed:
+      geneticValue: 31
+      investedValue: 0
+    maxHealth: 0
+    currentHealth: 0
+    currentAttack: 0
+    currentDefence: 0
+    currentSpecialAttack: 0
+    currentSpecialDefence: 0
+    currentSpeed: 0
 --- !u!1 &2076035334
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,34 +471,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff205bbeb663774e9c3507d5a73fc73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pid: 0
-  level: 100
-  species: {fileID: 11400000, guid: cf86a73568b07f648b92ff8a8a3e55c0, type: 2}
-  item: 
-  ability: {fileID: 0}
-  health:
-    geneticValue: 0
-    investedValue: 0
-  attack:
-    geneticValue: 0
-    investedValue: 0
-  defence:
-    geneticValue: 0
-    investedValue: 0
-  specialAttack:
-    geneticValue: 0
-    investedValue: 0
-  specialDefence:
-    geneticValue: 0
-    investedValue: 0
-  speed:
-    geneticValue: 0
-    investedValue: 0
-  maxHealth: 0
-  currentHealth: 0
-  currentAttack: 0
-  currentDefence: 0
-  currentSpecialAttack: 0
-  currentSpecialDefence: 0
-  currentSpeed: 0
   target: {fileID: 0}
+  data:
+    pid: 0
+    level: 100
+    species: {fileID: 11400000, guid: cf86a73568b07f648b92ff8a8a3e55c0, type: 2}
+    item: 
+    ability: {fileID: 0}
+    health:
+      geneticValue: 0
+      investedValue: 0
+    attack:
+      geneticValue: 0
+      investedValue: 0
+    defence:
+      geneticValue: 0
+      investedValue: 0
+    specialAttack:
+      geneticValue: 0
+      investedValue: 0
+    specialDefence:
+      geneticValue: 0
+      investedValue: 0
+    speed:
+      geneticValue: 0
+      investedValue: 0
+    maxHealth: 0
+    currentHealth: 0
+    currentAttack: 0
+    currentDefence: 0
+    currentSpecialAttack: 0
+    currentSpecialDefence: 0
+    currentSpeed: 0
