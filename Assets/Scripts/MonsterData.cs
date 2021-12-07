@@ -29,6 +29,9 @@ public class MonsterData
     public int currentSpecialAttack;
     public int currentSpecialDefence;
     public int currentSpeed;
+    [Space(5)]
+    [Header("Moves")]
+    public RuntimeMonsterMove[] moves;
 
     public MonsterData(MonsterSpecies _species, int _level)
     {
@@ -54,6 +57,8 @@ public class MonsterData
 
         UnityEngine.Random.state = _previousState;
 
+        PopulateMoves();
+
         RefreshStats();
         Heal();
     }
@@ -77,6 +82,8 @@ public class MonsterData
         specialDefence = new Stat(_data.specialDefence);
         speed = new Stat(_data.speed);
 
+        PopulateMoves();
+
         RefreshStats();
         Heal();
     }
@@ -95,5 +102,43 @@ public class MonsterData
         currentSpecialAttack = specialAttack.GetValue(species.specialAttack, level);
         currentSpecialDefence = specialDefence.GetValue(species.specialDefence, level);
         currentSpeed = speed.GetValue(species.speed, level);
+    }
+
+    public void Initialize()
+    {
+        pid = UnityEngine.Random.Range(int.MinValue, int.MaxValue);
+
+        var _previousState = UnityEngine.Random.state;
+        UnityEngine.Random.InitState(pid);
+
+        if (ability == null)
+        {
+            ability = species.abilities[UnityEngine.Random.Range(0, species.abilities.Count)];
+        }
+
+        health = new Stat(UnityEngine.Random.Range(0, 31));
+        attack = new Stat(UnityEngine.Random.Range(0, 31));
+        defence = new Stat(UnityEngine.Random.Range(0, 31));
+        specialAttack = new Stat(UnityEngine.Random.Range(0, 31));
+        specialDefence = new Stat(UnityEngine.Random.Range(0, 31));
+        speed = new Stat(UnityEngine.Random.Range(0, 31));
+
+        UnityEngine.Random.state = _previousState;
+
+        RefreshStats();
+        Heal();
+    }
+
+    public bool TakeDamage(int _damage)
+    {
+        currentHealth -= _damage;
+        return false;
+    }
+
+    private void PopulateMoves()
+    {
+        moves = new RuntimeMonsterMove[4];
+
+        moves[0] = new RuntimeMonsterMove(species.moves[0]);
     }
 }

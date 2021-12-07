@@ -9,10 +9,15 @@ public class DebugMonster : MonoBehaviour
 
     private void Start()
     {
+        Initialize();
+    }
+
+
+    public void Initialize()
+    {
         //data = new MonsterData(data);
         data = new MonsterData(data.species, data.level);
     }
-
 
     private void OnMouseDown()
     {
