@@ -157,7 +157,7 @@ public class BattleSystem : MonoBehaviour
                 Debug.Log("Really Not Very Effective");
                 break;
             case 0:
-                Debug.Log("That did shit all");
+                Debug.Log("That did nothing at all");
                 break;
         }
 
