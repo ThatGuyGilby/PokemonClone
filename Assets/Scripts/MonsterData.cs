@@ -139,6 +139,12 @@ public class MonsterData
     {
         moves = new RuntimeMonsterMove[4];
 
-        moves[0] = new RuntimeMonsterMove(species.moves[0]);
+        for (int i = 0; i < species.moves.Count; i++)
+        {
+            if (i < 4)
+            {
+                moves[i] = new RuntimeMonsterMove(species.moves[i]);
+            }
+        }
     }
 }

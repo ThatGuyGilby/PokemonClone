@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Gliscor
   m_EditorClassIdentifier: 
   speciesName: Gliscor
+  frontSprite: {fileID: 21300000, guid: 2a9e516f3e870134a91df68c769ea3cc, type: 3}
+  backSprite: {fileID: 21300000, guid: 9c924471969402c498fa2eb03e750413, type: 3}
   types:
   - {fileID: 11400000, guid: b7480c6831fa8504ba7714df70dcbbb0, type: 2}
   - {fileID: 11400000, guid: 7f7190ffa9a5cd9428eac9a9271b265d, type: 2}
@@ -28,3 +30,6 @@ MonoBehaviour:
   speed: 95
   moves:
   - {fileID: 11400000, guid: 742eff52b3af7d146a51531dbb7b2e4f, type: 2}
+  - {fileID: 11400000, guid: fcdb9f2d5ad330c4ebadf7e407ae1e45, type: 2}
+  - {fileID: 11400000, guid: 2da2afa7447b2304c8a9d4b28254cf46, type: 2}
+  - {fileID: 11400000, guid: bf5c43371846438499f39b2729f4a009, type: 2}
