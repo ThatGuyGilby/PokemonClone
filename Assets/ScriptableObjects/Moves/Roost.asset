@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Roost
   m_EditorClassIdentifier: 
   moveName: Roost
-  moveDamageType: 3
+  moveUseType: 3
   moveDescription: 
   moveType: {fileID: 11400000, guid: 7f7190ffa9a5cd9428eac9a9271b265d, type: 2}
-  power: 0
+  attackPower: 0
+  flatHealPercentage: 50
   accuracy: 100
   uses: 16

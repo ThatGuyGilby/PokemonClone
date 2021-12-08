@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a891c06d43bf024f84dff4a51fb4852, type: 3}
-  m_Name: Defog
+  m_Name: Ice Fang
   m_EditorClassIdentifier: 
-  moveName: Defog
-  moveDamageType: 2
+  moveName: Ice Fang
+  moveDamageType: 0
   moveDescription: 
-  moveType: {fileID: 11400000, guid: 7f7190ffa9a5cd9428eac9a9271b265d, type: 2}
-  power: 0
-  accuracy: 100
-  uses: 16
+  moveType: {fileID: 11400000, guid: bbbf0602206650047803ac5ff1c9ebc7, type: 2}
+  attackPower: 65
+  healPercentage: 0
+  accuracy: 95
+  uses: 24

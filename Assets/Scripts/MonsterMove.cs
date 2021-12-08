@@ -6,15 +6,17 @@ using UnityEngine;
 public class MonsterMove : ScriptableObject
 {
     public string moveName;
-    public DamageType moveDamageType;
+    public MoveUseType moveUseType;
     [TextArea(5, 5)] public string moveDescription;
     public MonsterType moveType;
-    public int power;
+    public int attackPower;
+    public int flatHealPercentage;
     public int accuracy;
     public int uses;
+    public bool switchAfterUse;
 }
 
-public enum DamageType
+public enum MoveUseType
 {
     Physical,
     Special,

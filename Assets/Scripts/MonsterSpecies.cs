@@ -8,6 +8,7 @@ public class MonsterSpecies : ScriptableObject
     public string speciesName;
     public Sprite frontSprite;
     public Sprite backSprite;
+    public Sprite partySprite;
     public List<MonsterType> types;
     public List<MonsterAbility> abilities;
     public MonsterAbility hiddenAbility;

@@ -49,11 +49,7 @@ public class MoveButtonUI : MonoBehaviour
         {
             if (_move == move)
             {
-                _move.uses--;
-
-                UpdateUses();
-
-                Debug.Log($"{battleSystem.playerMonster.data.species.speciesName} used {move.move.moveName}!");
+                battleSystem.SetPlayerMove(_move);
             }
         }
     }

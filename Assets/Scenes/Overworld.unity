@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster:
+    validForBattle: 0
     pid: 0
     level: 100
     species: {fileID: 11400000, guid: cf86a73568b07f648b92ff8a8a3e55c0, type: 2}
@@ -267,6 +268,265 @@ MonoBehaviour:
     currentSpecialDefence: 0
     currentSpeed: 0
     moves: []
+  monsters:
+  - validForBattle: 0
+    pid: 0
+    level: 75
+    species: {fileID: 11400000, guid: cf86a73568b07f648b92ff8a8a3e55c0, type: 2}
+    item: 
+    ability: {fileID: 0}
+    health:
+      geneticValue: 0
+      investedValue: 0
+    attack:
+      geneticValue: 0
+      investedValue: 0
+    defence:
+      geneticValue: 0
+      investedValue: 0
+    specialAttack:
+      geneticValue: 0
+      investedValue: 0
+    specialDefence:
+      geneticValue: 0
+      investedValue: 0
+    speed:
+      geneticValue: 0
+      investedValue: 0
+    maxHealth: 0
+    currentHealth: 0
+    currentAttack: 0
+    currentDefence: 0
+    currentSpecialAttack: 0
+    currentSpecialDefence: 0
+    currentSpeed: 0
+    moves: []
+  - validForBattle: 0
+    pid: 0
+    level: 25
+    species: {fileID: 11400000, guid: cf86a73568b07f648b92ff8a8a3e55c0, type: 2}
+    item: 
+    ability: {fileID: 0}
+    health:
+      geneticValue: 0
+      investedValue: 0
+    attack:
+      geneticValue: 0
+      investedValue: 0
+    defence:
+      geneticValue: 0
+      investedValue: 0
+    specialAttack:
+      geneticValue: 0
+      investedValue: 0
+    specialDefence:
+      geneticValue: 0
+      investedValue: 0
+    speed:
+      geneticValue: 0
+      investedValue: 0
+    maxHealth: 0
+    currentHealth: 0
+    currentAttack: 0
+    currentDefence: 0
+    currentSpecialAttack: 0
+    currentSpecialDefence: 0
+    currentSpeed: 0
+    moves: []
+  party:
+    members:
+    - validForBattle: 0
+      pid: 0
+      level: 1
+      species: {fileID: 0}
+      item: 
+      ability: {fileID: 0}
+      health:
+        geneticValue: 0
+        investedValue: 0
+      attack:
+        geneticValue: 0
+        investedValue: 0
+      defence:
+        geneticValue: 0
+        investedValue: 0
+      specialAttack:
+        geneticValue: 0
+        investedValue: 0
+      specialDefence:
+        geneticValue: 0
+        investedValue: 0
+      speed:
+        geneticValue: 0
+        investedValue: 0
+      maxHealth: 0
+      currentHealth: 0
+      currentAttack: 0
+      currentDefence: 0
+      currentSpecialAttack: 0
+      currentSpecialDefence: 0
+      currentSpeed: 0
+      moves: []
+    - validForBattle: 0
+      pid: 0
+      level: 1
+      species: {fileID: 0}
+      item: 
+      ability: {fileID: 0}
+      health:
+        geneticValue: 0
+        investedValue: 0
+      attack:
+        geneticValue: 0
+        investedValue: 0
+      defence:
+        geneticValue: 0
+        investedValue: 0
+      specialAttack:
+        geneticValue: 0
+        investedValue: 0
+      specialDefence:
+        geneticValue: 0
+        investedValue: 0
+      speed:
+        geneticValue: 0
+        investedValue: 0
+      maxHealth: 0
+      currentHealth: 0
+      currentAttack: 0
+      currentDefence: 0
+      currentSpecialAttack: 0
+      currentSpecialDefence: 0
+      currentSpeed: 0
+      moves: []
+    - validForBattle: 0
+      pid: 0
+      level: 1
+      species: {fileID: 0}
+      item: 
+      ability: {fileID: 0}
+      health:
+        geneticValue: 0
+        investedValue: 0
+      attack:
+        geneticValue: 0
+        investedValue: 0
+      defence:
+        geneticValue: 0
+        investedValue: 0
+      specialAttack:
+        geneticValue: 0
+        investedValue: 0
+      specialDefence:
+        geneticValue: 0
+        investedValue: 0
+      speed:
+        geneticValue: 0
+        investedValue: 0
+      maxHealth: 0
+      currentHealth: 0
+      currentAttack: 0
+      currentDefence: 0
+      currentSpecialAttack: 0
+      currentSpecialDefence: 0
+      currentSpeed: 0
+      moves: []
+    - validForBattle: 0
+      pid: 0
+      level: 1
+      species: {fileID: 0}
+      item: 
+      ability: {fileID: 0}
+      health:
+        geneticValue: 0
+        investedValue: 0
+      attack:
+        geneticValue: 0
+        investedValue: 0
+      defence:
+        geneticValue: 0
+        investedValue: 0
+      specialAttack:
+        geneticValue: 0
+        investedValue: 0
+      specialDefence:
+        geneticValue: 0
+        investedValue: 0
+      speed:
+        geneticValue: 0
+        investedValue: 0
+      maxHealth: 0
+      currentHealth: 0
+      currentAttack: 0
+      currentDefence: 0
+      currentSpecialAttack: 0
+      currentSpecialDefence: 0
+      currentSpeed: 0
+      moves: []
+    - validForBattle: 0
+      pid: 0
+      level: 1
+      species: {fileID: 0}
+      item: 
+      ability: {fileID: 0}
+      health:
+        geneticValue: 0
+        investedValue: 0
+      attack:
+        geneticValue: 0
+        investedValue: 0
+      defence:
+        geneticValue: 0
+        investedValue: 0
+      specialAttack:
+        geneticValue: 0
+        investedValue: 0
+      specialDefence:
+        geneticValue: 0
+        investedValue: 0
+      speed:
+        geneticValue: 0
+        investedValue: 0
+      maxHealth: 0
+      currentHealth: 0
+      currentAttack: 0
+      currentDefence: 0
+      currentSpecialAttack: 0
+      currentSpecialDefence: 0
+      currentSpeed: 0
+      moves: []
+    - validForBattle: 0
+      pid: 0
+      level: 1
+      species: {fileID: 0}
+      item: 
+      ability: {fileID: 0}
+      health:
+        geneticValue: 0
+        investedValue: 0
+      attack:
+        geneticValue: 0
+        investedValue: 0
+      defence:
+        geneticValue: 0
+        investedValue: 0
+      specialAttack:
+        geneticValue: 0
+        investedValue: 0
+      specialDefence:
+        geneticValue: 0
+        investedValue: 0
+      speed:
+        geneticValue: 0
+        investedValue: 0
+      maxHealth: 0
+      currentHealth: 0
+      currentAttack: 0
+      currentDefence: 0
+      currentSpecialAttack: 0
+      currentSpecialDefence: 0
+      currentSpeed: 0
+      moves: []
   disableInBattle:
   - {fileID: 496172178}
   - {fileID: 1700162644}

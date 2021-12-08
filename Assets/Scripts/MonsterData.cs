@@ -7,6 +7,7 @@ using UnityEngine;
 public class MonsterData
 {
     [Header("Monster Data")]
+    public bool validForBattle;
     public int pid;
     [Range(1, 100)] public int level = 1;
     public MonsterSpecies species;
@@ -35,6 +36,7 @@ public class MonsterData
 
     public MonsterData(MonsterSpecies _species, int _level)
     {
+        validForBattle = true;
         pid = UnityEngine.Random.Range(int.MinValue, int.MaxValue);
 
         var _previousState = UnityEngine.Random.state;
@@ -65,6 +67,7 @@ public class MonsterData
 
     public MonsterData(MonsterData _data)
     {
+        validForBattle = true;
         pid = _data.pid;
 
         species = _data.species;
@@ -86,6 +89,11 @@ public class MonsterData
 
         RefreshStats();
         Heal();
+    }
+
+    public MonsterData()
+    {
+        validForBattle = false;
     }
 
     public void Heal()
@@ -146,5 +154,33 @@ public class MonsterData
                 moves[i] = new RuntimeMonsterMove(species.moves[i]);
             }
         }
+    }
+
+    public float GetEffectiveness(MonsterType _typeToCheck)
+    {
+        float _multiplier = 1.0f;
+
+        foreach (MonsterType _type in species.types)
+        {
+            foreach (MonsterType _typee in _type.weaknesses)
+            {
+                if (_typee == _typeToCheck) _multiplier *= 2f;
+            }
+
+            foreach (MonsterType _typee in _type.resistances)
+            {
+                if (_typee == _typeToCheck) _multiplier *= 0.5f;
+            }
+        }
+
+        foreach (MonsterType _type in species.types)
+        {
+            foreach (MonsterType _typee in _type.immunities)
+            {
+                if (_typee == _typeToCheck) _multiplier *= 0;
+            }
+        }
+
+        return _multiplier;
     }
 }
