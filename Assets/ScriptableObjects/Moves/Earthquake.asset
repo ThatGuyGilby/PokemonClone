@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: Earthquake
   m_EditorClassIdentifier: 
   moveName: Earthquake
-  moveDamageType: 0
+  moveUseType: 0
   moveDescription: 
   moveType: {fileID: 11400000, guid: b7480c6831fa8504ba7714df70dcbbb0, type: 2}
   attackPower: 100
-  healPercentage: 0
+  flatHealPercentage: 0
   accuracy: 100
   uses: 16
+  switchAfterUse: 0
+  enemyEffect: {fileID: 8610287411581626841, guid: a8fbdd9688d7c4948b87001c0c48d4be, type: 3}
+  userEffect: {fileID: 0}

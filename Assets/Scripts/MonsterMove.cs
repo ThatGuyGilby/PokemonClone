@@ -14,6 +14,9 @@ public class MonsterMove : ScriptableObject
     public int accuracy;
     public int uses;
     public bool switchAfterUse;
+
+    public GameObject enemyEffect;
+    public GameObject userEffect;
 }
 
 public enum MoveUseType

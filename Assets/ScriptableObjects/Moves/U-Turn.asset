@@ -21,3 +21,5 @@ MonoBehaviour:
   accuracy: 100
   uses: 32
   switchAfterUse: 1
+  enemyEffect: {fileID: 8610287411581626841, guid: a8fbdd9688d7c4948b87001c0c48d4be, type: 3}
+  userEffect: {fileID: 0}

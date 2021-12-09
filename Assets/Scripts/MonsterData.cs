@@ -140,6 +140,12 @@ public class MonsterData
     public bool TakeDamage(int _damage)
     {
         currentHealth -= _damage;
+
+        if (currentHealth <= 0)
+        {
+            validForBattle = false;
+        }
+
         return false;
     }
 

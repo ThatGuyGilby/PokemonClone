@@ -55,7 +55,7 @@ public class BattleSystem : MonoBehaviour
         enemyMonster = _enemyMonsterGO.GetComponent<BattleMonster>();
         
         MonsterData _enemyMonsterData = new MonsterData(GameManager.Instance.party.members[0].species, 100);
-        MonsterParty enemyParty = new MonsterParty(_enemyMonsterData);
+        enemyParty = new MonsterParty(_enemyMonsterData);
         enemyMonster.SetData(_enemyMonsterData, _enemyMonsterData.species.frontSprite);
         enemyMonsterGUI.SetData(_enemyMonsterData);
         enemyPartyGUI.SetParty(enemyParty);
@@ -78,58 +78,26 @@ public class BattleSystem : MonoBehaviour
 
     public void SetPlayerMove(RuntimeMonsterMove _move)
     {
-        _move.uses--;
-
-        switch(UseMove(_move.move, playerMonster.data, enemyMonster.data))
-        {
-            case 0:
-                break;
-            case 1:
-                bool _hasMoreMonsters = false;
-
-                //for (int i = 0; i < enemyParty.members.Length; i++)
-                //{
-                //    if (enemyParty.members[i].validForBattle)
-                //    {
-                //        _hasMoreMonsters = true;
-                //    }
-                //}
-
-                if (_hasMoreMonsters)
-                {
-                    // switch here
-                }
-                else
-                {
-                    GameManager.Instance.EndBattle();
-                }
-
-                break;
-        }
-
-        UseMove(enemyMonster.data.moves[0].move, enemyMonster.data, playerMonster.data);
-
-        foreach (MoveButtonUI _button in moveButtons)
-        {
-            _button.UpdateUses();
-        }
+        StartCoroutine(BattlePhase(_move));
     }
 
-    public int UseMove(MonsterMove _move, MonsterData _user, MonsterData _target)
+    public int UseMove(MonsterMove _move, BattleMonster _user, BattleMonster _target)
     {
         int _output = 0;
         float _accuracyCheck = Random.Range(0, 100);
+
+        if (!_user.data.validForBattle) return -1;
 
         if (_accuracyCheck < _move.accuracy)
         {
             // if there is an attack power deal damage
             if (_move.attackPower != 0)
             {
-                float _damage = CalculateDamage(_move, _user, _target);
+                float _damage = CalculateDamage(_move, _user.data, _target.data);
 
-                _target.currentHealth -= Mathf.RoundToInt(_damage);
+                _target.data.TakeDamage(Mathf.RoundToInt(_damage));
 
-                if (_target.currentHealth <= 0)
+                if (_target.data.currentHealth <= 0)
                 {
                     _output = 1;
                 }
@@ -138,7 +106,17 @@ public class BattleSystem : MonoBehaviour
             // if  there is a flat heal percentage heal the user
             if (_move.flatHealPercentage != 0)
             {
-                _user.currentHealth = Mathf.RoundToInt(Mathf.Min((float)_user.currentHealth + ((float)_user.maxHealth * (_move.flatHealPercentage / 100f)), _user.maxHealth));
+                _user.data.currentHealth = Mathf.RoundToInt(Mathf.Min((float)_user.data.currentHealth + ((float)_user.data.maxHealth * (_move.flatHealPercentage / 100f)), _user.data.maxHealth));
+            }
+
+            if (_move.userEffect != null)
+            {
+                Instantiate(_move.userEffect, _user.transform);
+            }
+
+            if (_move.enemyEffect != null)
+            {
+                Instantiate(_move.enemyEffect, _target.transform);
             }
         }
         else
@@ -212,5 +190,71 @@ public class BattleSystem : MonoBehaviour
         float _damage = ((((2f * _level / 5f + 2f) * _attackStat * _attackPower / _defenceStat) / 50f) + 2f) * _stab * _critical * _effectiveness * _randomness;
 
         return _damage;
+    }
+
+    public IEnumerator BattlePhase(RuntimeMonsterMove _move)
+    {
+        bool _enemyKilled = false;
+        float _turnTimeMultiplier = 1f;
+
+        foreach (MoveButtonUI _button in moveButtons)
+        {
+            _button.gameObject.SetActive(false);
+        }
+
+        yield return new WaitForSeconds(.5f * _turnTimeMultiplier);
+
+        // player move
+
+        _move.uses--;
+        switch (UseMove(_move.move, playerMonster, enemyMonster))
+        {
+            case 0:
+                break;
+            case 1:
+                bool _hasMoreMonsters = false;
+
+                for (int i = 0; i < enemyParty.members.Length; i++)
+                {
+                    if (enemyParty.members[i].validForBattle)
+                    {
+                        _hasMoreMonsters = true;
+                    }
+                }
+
+                if (_hasMoreMonsters)
+                {
+                    // switch here
+                }
+                else
+                {
+                    _enemyKilled = true;
+                }
+
+                break;
+        }
+
+        // player move
+
+        yield return new WaitForSeconds(1 * _turnTimeMultiplier);
+
+        // enemy move
+
+        UseMove(enemyMonster.data.moves[0].move, enemyMonster, playerMonster);
+
+        // enemy move
+
+        yield return new WaitForSeconds(1 * _turnTimeMultiplier);
+       
+        if (_enemyKilled)
+        {
+            GameManager.Instance.EndBattle();
+        }
+
+        foreach (MoveButtonUI _button in moveButtons)
+        {
+            _button.gameObject.SetActive(true);
+            _button.UpdateUses();
+        }
     }
 }

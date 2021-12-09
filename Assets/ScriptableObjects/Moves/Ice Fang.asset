@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: Ice Fang
   m_EditorClassIdentifier: 
   moveName: Ice Fang
-  moveDamageType: 0
+  moveUseType: 0
   moveDescription: 
   moveType: {fileID: 11400000, guid: bbbf0602206650047803ac5ff1c9ebc7, type: 2}
   attackPower: 65
-  healPercentage: 0
+  flatHealPercentage: 0
   accuracy: 95
   uses: 24
+  switchAfterUse: 0
+  enemyEffect: {fileID: 8610287411581626841, guid: a8fbdd9688d7c4948b87001c0c48d4be, type: 3}
+  userEffect: {fileID: 0}

@@ -20,3 +20,6 @@ MonoBehaviour:
   flatHealPercentage: 50
   accuracy: 100
   uses: 16
+  switchAfterUse: 0
+  enemyEffect: {fileID: 0}
+  userEffect: {fileID: 9178737964014576519, guid: 45d3c74b03bdffc408ebfe8715a5055a, type: 3}
