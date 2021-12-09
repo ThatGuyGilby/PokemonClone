@@ -33,7 +33,9 @@ public class BattleSystem : MonoBehaviour
 
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
-    
+
+    MonsterParty enemyParty;
+
     private void Start()
     {
         StartBattle();
@@ -53,10 +55,10 @@ public class BattleSystem : MonoBehaviour
         enemyMonster = _enemyMonsterGO.GetComponent<BattleMonster>();
         
         MonsterData _enemyMonsterData = new MonsterData(GameManager.Instance.party.members[0].species, 100);
-        MonsterParty _enemyMonsterParty = new MonsterParty(_enemyMonsterData);
+        MonsterParty enemyParty = new MonsterParty(_enemyMonsterData);
         enemyMonster.SetData(_enemyMonsterData, _enemyMonsterData.species.frontSprite);
         enemyMonsterGUI.SetData(_enemyMonsterData);
-        enemyPartyGUI.SetParty(_enemyMonsterParty);
+        enemyPartyGUI.SetParty(enemyParty);
 
         if (playerMonster == null) return;
 
@@ -78,7 +80,34 @@ public class BattleSystem : MonoBehaviour
     {
         _move.uses--;
 
-        UseMove(_move.move, playerMonster.data, enemyMonster.data);
+        switch(UseMove(_move.move, playerMonster.data, enemyMonster.data))
+        {
+            case 0:
+                break;
+            case 1:
+                bool _hasMoreMonsters = false;
+
+                //for (int i = 0; i < enemyParty.members.Length; i++)
+                //{
+                //    if (enemyParty.members[i].validForBattle)
+                //    {
+                //        _hasMoreMonsters = true;
+                //    }
+                //}
+
+                if (_hasMoreMonsters)
+                {
+                    // switch here
+                }
+                else
+                {
+                    GameManager.Instance.EndBattle();
+                }
+
+                break;
+        }
+
+        UseMove(enemyMonster.data.moves[0].move, enemyMonster.data, playerMonster.data);
 
         foreach (MoveButtonUI _button in moveButtons)
         {
@@ -86,8 +115,9 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
-    public void UseMove(MonsterMove _move, MonsterData _user, MonsterData _target)
+    public int UseMove(MonsterMove _move, MonsterData _user, MonsterData _target)
     {
+        int _output = 0;
         float _accuracyCheck = Random.Range(0, 100);
 
         if (_accuracyCheck < _move.accuracy)
@@ -98,20 +128,34 @@ public class BattleSystem : MonoBehaviour
                 float _damage = CalculateDamage(_move, _user, _target);
 
                 _target.currentHealth -= Mathf.RoundToInt(_damage);
-                enemyMonsterGUI.UpdateHealth();
+
+                if (_target.currentHealth <= 0)
+                {
+                    _output = 1;
+                }
             }
 
             // if  there is a flat heal percentage heal the user
             if (_move.flatHealPercentage != 0)
             {
                 _user.currentHealth = Mathf.RoundToInt(Mathf.Min((float)_user.currentHealth + ((float)_user.maxHealth * (_move.flatHealPercentage / 100f)), _user.maxHealth));
-                playerMonsterGUI.UpdateHealth();
             }
         }
         else
         {
             Debug.Log("Missed...");
         }
+
+        UpdateGUI();
+
+        // returns 1 if the unit was killed
+        return _output;
+    }
+
+    private void UpdateGUI()
+    {
+        enemyMonsterGUI.UpdateHealth();
+        playerMonsterGUI.UpdateHealth();
     }
 
     public float CalculateDamage(MonsterMove _move, MonsterData _attacker, MonsterData _defender)

@@ -50,6 +50,8 @@ public class GameManager : MonoBehaviour
 
     public void EndBattle()
     {
+        SceneManager.UnloadSceneAsync(1);
+
         foreach (GameObject _object in disableInBattle)
         {
             _object.SetActive(true);
