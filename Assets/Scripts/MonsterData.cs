@@ -190,3 +190,8 @@ public class MonsterData
         return _multiplier;
     }
 }
+
+public class SerializedMonsterData
+{
+
+}
